@@ -37,10 +37,12 @@ print(c == c1)
 # s.issubset(t)	s <= t
 print(c <= c1)
 
+print('s.issuperset(t)')
 # s.issuperset(t)	s >= t
 print(c >= {'h'})
 
 # s.union(t, …)	s | t
+print('s.union(t, ,,,  s | t')
 print(b | d)
 
 # s.intersection(t, …)	s & t
@@ -104,6 +106,7 @@ print(b)
 #     Frozenset (неизменяемое множество)
 # ========================================
 
+print('## Frozenset ##')
 a = frozenset('hellow')
 b = set('hellow')
 print(a == b)

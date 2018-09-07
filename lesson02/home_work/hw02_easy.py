@@ -13,6 +13,21 @@
 
 # Подсказка: воспользоваться методом .format()
 
+print("Решение без использования .format()")
+fruits = ["яблоко", "банан", "киви", "арбуз"]
+
+print("\nРешение с использованием .format()")
+num = 0
+for fruit in fruits:
+    num += 1
+    print(num, "{}".format(fruit).rjust(10,' '))
+
+print("\nИспользовал и .format() и .rjust()")
+num = 0
+for fruit in fruits:
+    num += 1
+    fruit = str(num) + '.' + '{}'.format(fruit).rjust(10, ' ')
+    print(fruit)
 
 # Задача-2:
 # Даны два произвольные списка.
