@@ -20,6 +20,7 @@ d = dict([(1, 10), (2, 20)])
 print('d = ', d)
 
 # Создание словаря с помощью мотода fromkeys:
+print('№№№№№№№№№№№№№№№№№№')
 e = dict.fromkeys(['a', 'b', 'c'])
 print('e = ', d)
 f = dict.fromkeys(['a', 'b', 'c'], 'initial')
