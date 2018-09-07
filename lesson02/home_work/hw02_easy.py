@@ -53,6 +53,6 @@ for item in list1:
         list2.append(item * 2)
 print(list2)
 
-print('\nЗадача-3. Второй вариант')
+print('\nЗадача-3. Второй вариант   ')
 s = (x/4 if x%2==0 else x*2 for x in list1)
 print(list(s))

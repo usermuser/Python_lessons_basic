@@ -5,6 +5,22 @@
 # если такой корень вообще можно извлечь
 # Пример: Дано: [2, -5, 8, 9, -25, 25, 4]   Результат: [3, 5, 2]
 
+print('Задача-1')
+import math
+
+list1 = [2, -5, 8, 9, -25, 25, 4]
+right_result = [3, 5, 2]
+result = []
+
+for item in list1:
+    if item > 0 and math.sqrt(item).is_integer():
+        result.append(int(math.sqrt(item)))
+print(result)
+
+if right_result == result:
+    print('Test OK')
+else:
+    print('Test Failed')
 
 # Задача-2: Дана дата в формате dd.mm.yyyy, например: 02.11.2013.
 # Ваша задача вывести дату в текстовом виде, например: второе ноября 2013 года.
