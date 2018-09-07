@@ -5,17 +5,26 @@
 # если такой корень вообще можно извлечь
 # Пример: Дано: [2, -5, 8, 9, -25, 25, 4]   Результат: [3, 5, 2]
 
-print('Задача-1')
-import math
+print('Задача-1. Первый вариант')
+from math import sqrt
 
 list1 = [2, -5, 8, 9, -25, 25, 4]
 right_result = [3, 5, 2]
 result = []
 
 for item in list1:
-    if item > 0 and math.sqrt(item).is_integer():
-        result.append(int(math.sqrt(item)))
-print(result)
+    if item > 0 and sqrt(item).is_integer():
+        result.append(int(sqrt(item)))
+print('Expected', right_result, ', got',result)
+
+if right_result == result:
+    print('Test OK')
+else:
+    print('Test Failed')
+
+print('\nЗадача-1. Второй вариант')
+result = [int(sqrt(item)) for item in list1 if item > 0 and sqrt(item).is_integer()]
+print('Expected', right_result, ', got',result)
 
 if right_result == result:
     print('Test OK')
