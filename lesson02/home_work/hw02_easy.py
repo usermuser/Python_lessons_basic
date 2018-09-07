@@ -13,16 +13,16 @@
 
 # Подсказка: воспользоваться методом .format()
 
-print("Решение без использования .format()")
 fruits = ["яблоко", "банан", "киви", "арбуз"]
 
-print("\nРешение с использованием .format()")
+print("\nПервый вариант, в котором используем sep=")
 num = 0
 for fruit in fruits:
     num += 1
-    print(num, "{}".format(fruit).rjust(10, ' '))
+    print(num, '.', "{}".format(fruit).rjust(10, ' '), sep='')
 
-print("\nИспользовал и .format() и .rjust()")
+
+print("\nВторой вариант, в котором num конвертируем в строку")
 num = 0
 for fruit in fruits:
     num += 1
