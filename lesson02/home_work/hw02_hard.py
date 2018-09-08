@@ -31,13 +31,59 @@ print('y будет равно:', y)
 #  (т.е. 2 символа для дня, 2 - для месяца, 4 - для года)
 
 # Пример корректной даты
+print('\nЗадача-2.')
 date = '01.11.1985'
+print(date)
+
+if len(date) != 10:
+    print(len(date))
+    print('Некорректная дата')
+    date = date.split('.')
+    day, month, year = date[0], date[1], date[2]
+elif len(day) != 2 or len(month) != 2 or len(year) != 4:
+    print('Не корректная дата')
+elif day < 0 or len(day) < 2:
+    print('Корректная дата')
+else:
+    print('Корректная дата')
+
+
+
+#check day
+
+# day=date[0]
+# if int(day) < 0:
+#     day = day.replace('-', '')   # можно через abs()
+
+
+
+    # print(day)
+# elif:
+#     int(day) > 31:
+#     print('Не корректная дата, ')
+
+
+# if len(day) < 2:
+#     day = list(day)
+#     day.insert(0,'0')
+#     day = ''.join(day)
+#     # print('day =', day, type(day))
+# print('day =', day, type(day))
+
+#check month
+
+#  #check year
+# print(date)
 
 # Примеры некорректных дат
 date = '01.22.1001'
 date = '1.12.1001'
 date = '-2.10.3001'
 
+# a = [0,2,3,3]
+# print(a)
+# a.insert(0,10)
+# print(a)
 
 # Задание-3: "Перевёрнутая башня" (Задача олимпиадного уровня)
 #
