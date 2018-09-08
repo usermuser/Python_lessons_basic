@@ -1,9 +1,26 @@
 # Задание-1: уравнение прямой вида y = kx + b задано в виде строки.
 # Определить координату y точки с заданной координатой x.
 
+print('Задача-1.')
 equation = 'y = -12x + 11111140.2121'
 x = 2.5
 # вычислите и выведите y
+# y = -12*x+11111140.2121
+split1=(equation.split('+'))
+b = float(split1[1])
+k = split1[0]
+print(k)
+print(b)
+# print(list(k))
+
+#try to pop all whitespaces
+# eq_list = list(equation)
+# for i in eq_list:
+#     if i == ' ':
+#         s = eq_list.index(i)
+#         eq_list.pop(s)
+# print(eq_list)
+
 
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy'.
