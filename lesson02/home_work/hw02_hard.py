@@ -1,63 +1,24 @@
 # Задание-1: уравнение прямой вида y = kx + b задано в виде строки.
 # Определить координату y точки с заданной координатой x.
+# вычислите и выведите y
+# y = -12*x+11111140.2121
 
 print('Задача-1.')
 equation = 'y = -12x + 11111140.2121'
 x = 2.5
-# вычислите и выведите y
-# y = -12*x+11111140.2121
-split1=(equation.split('+'))
-b = float(split1[1])
-k = split1[0]
-print(k)
-print(b)
-# s = "".join(l)  # convert back to string
 
-newk = k.replace('y', '')
-print(newk)
+split1=(equation.split('+'))    # разделим уравнение на две части
+b = float(split1[1])            # получим b
+k = split1[0]                   # получим k, но нужно убрать лишнее
 
-newk = newk.replace('=', '')
-print(newk)
+temp_k = k.replace('y', '')        # уберем букву y из k
+temp_k = temp_k.replace('=', '')   # уберем знак равно
+temp_k = temp_k.replace('x', '')   # уберем букву икс
+k = int(temp_k)                    # преобразуем в число
 
-newk = newk.replace('x', '')
-print(int(newk))
-
-
-#
-# list_k = list(k)
-# print(list_k)
-#
-# str_k = str(k)
-# print(str_k)
-
-# if 'y' in k:
-#     print(k.index('y'))
-#
-# if '=' in k:
-#     print(k.index('='))
-
-# list_k = list(k)
-
-# if 'y' in k:
-#     i = list_k.index('y')
-#     list_k.pop(i)
-#
-# if '=' in k:
-#     i = list_k.index('=')
-#     list_k.pop(i)
-#
-# if 'x' in k:
-#     i = list_k.index('x')
-#     list_k.pop(i)
-#
-# #try to pop all whitespaces
-# for i in list_k:
-#     if i == ' ':
-#         s = list_k.index(i)
-#         list_k.pop(s)
-# print(list_k)
-
-
+y = k * x + b
+print('В уравнении', equation, ', где x = ', x)
+print('y будет равно:', y)
 
 # Задание-2: Дата задана в виде строки формата 'dd.mm.yyyy'.
 # Проверить, корректно ли введена дата.
