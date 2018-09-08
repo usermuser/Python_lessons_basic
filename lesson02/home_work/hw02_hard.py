@@ -11,15 +11,51 @@ b = float(split1[1])
 k = split1[0]
 print(k)
 print(b)
-# print(list(k))
+# s = "".join(l)  # convert back to string
 
-#try to pop all whitespaces
-# eq_list = list(equation)
-# for i in eq_list:
+newk = k.replace('y', '')
+print(newk)
+
+newk = newk.replace('=', '')
+print(newk)
+
+newk = newk.replace('x', '')
+print(int(newk))
+
+
+#
+# list_k = list(k)
+# print(list_k)
+#
+# str_k = str(k)
+# print(str_k)
+
+# if 'y' in k:
+#     print(k.index('y'))
+#
+# if '=' in k:
+#     print(k.index('='))
+
+# list_k = list(k)
+
+# if 'y' in k:
+#     i = list_k.index('y')
+#     list_k.pop(i)
+#
+# if '=' in k:
+#     i = list_k.index('=')
+#     list_k.pop(i)
+#
+# if 'x' in k:
+#     i = list_k.index('x')
+#     list_k.pop(i)
+#
+# #try to pop all whitespaces
+# for i in list_k:
 #     if i == ' ':
-#         s = eq_list.index(i)
-#         eq_list.pop(s)
-# print(eq_list)
+#         s = list_k.index(i)
+#         list_k.pop(s)
+# print(list_k)
 
 
 
