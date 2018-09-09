@@ -7,7 +7,7 @@ print('Задача-1.')
 equation = 'y = -12x + 11111140.2121'
 x = 2.5
 
-split1=(equation.split('+'))    # разделим уравнение на две части
+split1 = (equation.split('+'))    # разделим уравнение на две части
 b = float(split1[1])            # получим b
 k = split1[0]                   # получим k, но нужно убрать лишнее
 
@@ -32,58 +32,57 @@ print('y будет равно:', y)
 
 # Пример корректной даты
 print('\nЗадача-2.')
-date = '01.11.1985'
+# date = '01.11.1985'
+# Примеры некорректных дат
+# date = '01.22.1001'
+# date = '1.12.1001'
+# date = '-2.10.3001'
+date = '31.02.2000'  # Добавил проверку 31-ого дня в месяце
 print(date)
 
-if len(date) != 10:
-    print(len(date))
-    print('Некорректная дата')
-    date = date.split('.')
-    day, month, year = date[0], date[1], date[2]
+temp_date = date.split('.')
+day, month, year = temp_date[0], temp_date[1], temp_date[2]
+date_ok = True    # флаг корректной даты
+
+# Проверим, корректность формата введенной даты
+if len(date) != 10:   # если символов больше десяти
+    print('Некорректный формат даты')
+    date_ok = False
+
 elif len(day) != 2 or len(month) != 2 or len(year) != 4:
-    print('Не корректная дата')
-elif day < 0 or len(day) < 2:
-    print('Корректная дата')
-else:
-    print('Корректная дата')
+    print('Некорректная дата')
+    date_ok = False
 
+# Проверим день
+if int(day) < 0 or len(day) != 2:
+    print('Некорректный день')
+    date_ok = False
 
+# Проверим месяц
+if 12 < int(month) or int(month) < 0:
+    print('Некорректный месяц')
+    date_ok = False
 
-#check day
+# Проверка года
+if 9999 < int(year) or int(year) < 0:
+    print('Некорректный год')
+    date_ok = False
 
-# day=date[0]
-# if int(day) < 0:
-#     day = day.replace('-', '')   # можно через abs()
+# Если дата корректная, проверим, что в зависимости от месяца
+# день в диапазоне 30(31)
+# Эту проверку вывел в отдельный случай
+if date_ok and int(day) == 31:
+    print('День = 31, нужно проверить месяц')
+    # словарь месецев с 31 днем
+    dict_months = {'01': 31, '03': 31, '05': 31, '07': 31,
+                   '08': 31, '10': 31, '12': 31}
+    if day not in dict_months:
+        date_ok = False
+        print('В этом месяце меньше 31 дня')
 
-
-
-    # print(day)
-# elif:
-#     int(day) > 31:
-#     print('Не корректная дата, ')
-
-
-# if len(day) < 2:
-#     day = list(day)
-#     day.insert(0,'0')
-#     day = ''.join(day)
-#     # print('day =', day, type(day))
-# print('day =', day, type(day))
-
-#check month
-
-#  #check year
-# print(date)
-
-# Примеры некорректных дат
-date = '01.22.1001'
-date = '1.12.1001'
-date = '-2.10.3001'
-
-# a = [0,2,3,3]
-# print(a)
-# a.insert(0,10)
-# print(a)
+# Если флаг коррекной даты True, значит все проверки прошли успешно
+if date_ok:
+    print('Все хорошо, дата корректна')
 
 # Задание-3: "Перевёрнутая башня" (Задача олимпиадного уровня)
 #
